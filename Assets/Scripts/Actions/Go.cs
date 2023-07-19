@@ -6,9 +6,9 @@ using UnityEngine;
 
 public class Go : Action
 {
-    public override void RespondToInput(GameController controller, string verb)
+    public override void RespondToInput(GameController controller, string noun)
     {
-        if(controller.player.ChangeLocation(controller, verb))
+        if(controller.player.ChangeLocation(controller, noun))
             controller.DisplayLocation();
         else
             controller.currentText.text = "You can't go that way!";

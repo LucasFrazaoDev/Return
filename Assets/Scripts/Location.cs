@@ -7,6 +7,7 @@ public class Location : MonoBehaviour
     public string locationName;
     [TextArea] public string description;
     public Connection[] connections;
+    public List<Item> items = new List<Item>();
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,25 @@ public class Location : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public string GetItemText()
+    {
+        if (items.Count == 0) return "";
+
+        string result = "You see ";
+        bool first = true;
+        foreach (Item item in items)
+        {
+            if (item.itemEnabled)
+            {
+                if(!first) result += " and ";
+                result += item.description;
+                first = false;
+            }
+        }
+        result += "\n";
+        return result;
     }
 
     public string GetConnectionsText()
