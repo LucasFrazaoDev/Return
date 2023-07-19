@@ -5,8 +5,7 @@ using UnityEngine;
 public class Location : MonoBehaviour
 {
     public string locationName;
-    [TextArea]
-    public string description;
+    [TextArea] public string description;
     public Connection[] connections;
 
     // Start is called before the first frame update
@@ -19,5 +18,17 @@ public class Location : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public string GetConnectionsText()
+    {
+        string result = "";
+        foreach (Connection c in connections)
+        {
+            if (c.connectionEnabled)
+                result += c.description + "\n";
+        }
+
+        return result;
     }
 }
