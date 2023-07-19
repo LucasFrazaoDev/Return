@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
     public TMP_InputField textEntryField;
     public TextMeshProUGUI logText;
     public TextMeshProUGUI currentText;
+    public Action[] actions;
 
     [TextArea]public string introText;
 
@@ -44,7 +45,7 @@ public class GameController : MonoBehaviour
 
     private void LogCurrentText()
     {
-        logText.text += "\n\n";
+        logText.text += "\n";
         logText.text += currentText.text;
 
         logText.text += "\n\n";
@@ -58,8 +59,21 @@ public class GameController : MonoBehaviour
         char[] delimiter = { ' ' };
         string[] separatedWords = input.Split(delimiter);
 
-        // TODO
-        // Process these commands (separateWords)
+        foreach (Action action in actions)
+        {
+            if(action.keyword == separatedWords[0])
+            {
+                if(separatedWords.Length > 1)
+                {
+                    action.RespondToInput(this, separatedWords[1]);
+                }
+                else
+                {
+                    action.RespondToInput(this, "");
+                }
+                return;
+            }
+        }
 
         currentText.text = "Nothing happens! (having trouble? Type Help)";
     }

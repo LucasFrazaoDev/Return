@@ -156,6 +156,8 @@ MonoBehaviour:
   textEntryField: {fileID: 1553171080}
   logText: {fileID: 399174770}
   currentText: {fileID: 1393591170}
+  actions:
+  - {fileID: 11400000, guid: c3f248a9476c8c140bf741849a617ccf, type: 2}
   introText: "A thunder crack of splintering wood wrenches you from darkness. A scream
     of shock, heat and \r\nsweat floods onto the cold shaking ground. Reborn in moss
     and dirt you take one gasping breath of\r\nacrid smoke then another, and another.
@@ -426,8 +428,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.54745483}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 22.448105, y: -0.000030517578}
+  m_SizeDelta: {x: -47.3905, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &399174770
 MonoBehaviour:
@@ -592,7 +594,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 167.73}
+  m_AnchoredPosition: {x: 0, y: 167.72998}
   m_SizeDelta: {x: 0, y: -335.46}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &516315468
@@ -1580,8 +1582,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -0.124816895, y: 161.26482}
-  m_SizeDelta: {x: -0.24976, y: 322.7696}
+  m_AnchoredPosition: {x: -1.3701782, y: 161.26482}
+  m_SizeDelta: {x: -47.6366, y: 322.7696}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1393591170
 MonoBehaviour:
