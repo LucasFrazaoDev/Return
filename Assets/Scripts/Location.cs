@@ -31,4 +31,14 @@ public class Location : MonoBehaviour
 
         return result;
     }
+
+    public Connection GetConnection(string connectionNoun)
+    {
+        foreach (Connection c in connections)
+        {
+            if (c.connectionName.ToLower() == connectionNoun.ToLower())
+                return c;
+        }
+        return null;
+    }
 }

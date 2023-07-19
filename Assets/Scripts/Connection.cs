@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class Connection
 {
-    public string ConnectionName;
+    public string connectionName;
     public string description;
     public Location location;
     public bool connectionEnabled;

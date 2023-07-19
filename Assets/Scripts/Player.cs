@@ -17,4 +17,18 @@ public class Player : MonoBehaviour
     {
         
     }
+
+    public bool ChangeLocation(GameController controller, string connetionNoun)
+    {
+        Connection connection = currentLocation.GetConnection(connetionNoun);
+        if(connection != null)
+        {
+            if (connection.connectionEnabled)
+            {
+                currentLocation = connection.location;
+                return true;
+            }
+        }
+        return false;
+    }
 }
