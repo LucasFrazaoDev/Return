@@ -8,16 +8,32 @@ public class Item : MonoBehaviour
     [TextArea] public string description;
     public bool playerCanTake;
     public bool itemEnabled = true;
+    public Item targetItem = null;
+    public Interaction[] interactions;
 
-    // Start is called before the first frame update
-    void Start()
+    public bool InteractWith(GameController controller, string actionKeyword)
     {
-        
-    }
+        foreach (Interaction interaction in interactions)
+        {
+            if(interaction.action.keyword == actionKeyword)
+            {
+                foreach(Item disableItem in interaction.itemsToDisable)
+                    disableItem.itemEnabled = false;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+                foreach(Item enableItem in interaction.itemsToEnable)
+                    enableItem.itemEnabled = true;
+                
+                foreach(Connection disableConnection in interaction.connectionsToDisable)
+                    disableConnection.connectionEnabled = false;
+
+                foreach(Connection enableConnection in interaction.connectionsToEnable)
+                    enableConnection.connectionEnabled = true;
+
+                controller.currentText.text = interaction.response;
+                controller.DisplayLocation(true);
+                return true;
+            }
+        }
+        return false;
     }
 }
