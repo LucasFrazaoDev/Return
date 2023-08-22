@@ -7,6 +7,7 @@ public class Interaction
 {
     public Action action;
     [TextArea] public string response;
+    public string textToMatch;
     public List<Item> itemsToDisable = new List<Item>();
     public List<Item> itemsToEnable = new List<Item>();
     public List<Connection> connectionsToDisable = new List<Connection>();
