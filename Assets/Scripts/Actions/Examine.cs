@@ -10,7 +10,7 @@ public class Examine : Action
         // check item in room
         if (CheckItems(controller, controller.player.currentLocation.items, noun))
             return;
-        // check in inventory
+        // check item in inventory
         if (CheckItems(controller, controller.player.inventory, noun))
             return;
 

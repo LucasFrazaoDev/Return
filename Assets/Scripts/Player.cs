@@ -35,6 +35,11 @@ public class Player : MonoBehaviour
         return false;
     }
 
+    public void Teleport(GameController controller, Location destination)
+    {
+        currentLocation = destination;
+    }
+
     internal bool CanUseItem(GameController controller, Item item)
     {
         if (item.targetItem == null)
@@ -62,5 +67,17 @@ public class Player : MonoBehaviour
     internal bool CanTalkToItem(GameController controller, Item item)
     {
         return item.playerCanTalkTo;
+    }
+
+    internal bool CanGiveToItem(GameController controller, Item item)
+    {
+        return item.playerCanGiveTo;
+    }
+
+    public bool HasItemByName(string noun)
+    {
+        foreach (Item item in inventory)
+            if(item.itemName.ToLower() == noun.ToLower()) return true;
+        return false;
     }
 }

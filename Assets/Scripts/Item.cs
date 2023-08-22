@@ -7,6 +7,7 @@ public class Item : MonoBehaviour
     public string itemName;
     [TextArea] public string description;
     public bool playerCanTake;
+    public bool playerCanGiveTo = false;
     public bool playerCanTalkTo = false;
     public bool itemEnabled = true;
     public Item targetItem = null;
@@ -32,6 +33,9 @@ public class Item : MonoBehaviour
 
                 foreach(Connection enableConnection in interaction.connectionsToEnable)
                     enableConnection.connectionEnabled = true;
+
+                if(interaction.teleportLocation != null)
+                    controller.player.Teleport(controller, interaction.teleportLocation);
 
                 controller.currentText.text = interaction.response;
                 controller.DisplayLocation(true);

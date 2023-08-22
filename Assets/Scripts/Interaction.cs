@@ -12,4 +12,6 @@ public class Interaction
     public List<Item> itemsToEnable = new List<Item>();
     public List<Connection> connectionsToDisable = new List<Connection>();
     public List<Connection> connectionsToEnable = new List<Connection>();
+
+    public Location teleportLocation = null;
 }

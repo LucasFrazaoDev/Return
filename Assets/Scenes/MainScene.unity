@@ -262,6 +262,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9e5b3e36f46f31d4198f24848a9c0f27, type: 2}
   - {fileID: 11400000, guid: 170d006478a0edf498de85bfe529d701, type: 2}
   - {fileID: 11400000, guid: b0e6e7cd5f127b142be24b80c2fdc6c0, type: 2}
+  - {fileID: 11400000, guid: 361dbafeecc0fc1499d75f5e5b874fcf, type: 2}
   introText: "A thunder crack of splintering wood wrenches you from darkness. A scream
     of shock, heat and \r\nsweat floods onto the cold shaking ground. Reborn in moss
     and dirt you take one gasping breath of\r\nacrid smoke then another, and another.
@@ -334,6 +335,7 @@ MonoBehaviour:
   itemName: staff
   description: A staff
   playerCanTake: 1
+  playerCanGiveTo: 0
   playerCanTalkTo: 0
   itemEnabled: 1
   targetItem: {fileID: 934177437}
@@ -354,6 +356,7 @@ MonoBehaviour:
     - {fileID: 1146660054}
     - {fileID: 1167316549}
     - {fileID: 1381474239}
+    teleportLocation: {fileID: 0}
 --- !u!1 &127141388
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,8 +453,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: goldencoins
-  description: Gold coins
+  description: <b>goldencoins</b>
   playerCanTake: 1
+  playerCanGiveTo: 0
   playerCanTalkTo: 0
   itemEnabled: 0
   targetItem: {fileID: 0}
@@ -1169,10 +1173,20 @@ MonoBehaviour:
   itemName: head
   description: A smashed statue head
   playerCanTake: 0
+  playerCanGiveTo: 0
   playerCanTalkTo: 0
   itemEnabled: 1
   targetItem: {fileID: 0}
-  interactions: []
+  interactions:
+  - action: {fileID: 11400000, guid: 29d4a8597f476074ca64bb133730bbfa, type: 2}
+    response: You pick up the stone head in both hands. You turn the face towards
+      you, its looks familiar. You mouth the word, "Merlin".
+    textToMatch: 
+    itemsToDisable: []
+    itemsToEnable: []
+    connectionsToDisable: []
+    connectionsToEnable: []
+    teleportLocation: {fileID: 0}
 --- !u!1 &932673250
 GameObject:
   m_ObjectHideFlags: 0
@@ -1297,6 +1311,7 @@ MonoBehaviour:
   itemName: Serpent
   description: A serpent
   playerCanTake: 0
+  playerCanGiveTo: 0
   playerCanTalkTo: 0
   itemEnabled: 0
   targetItem: {fileID: 0}
@@ -1503,6 +1518,7 @@ MonoBehaviour:
   itemName: ferryman
   description: A robed Ferryman
   playerCanTake: 0
+  playerCanGiveTo: 0
   playerCanTalkTo: 1
   itemEnabled: 0
   targetItem: {fileID: 0}
@@ -1514,6 +1530,7 @@ MonoBehaviour:
     itemsToEnable: []
     connectionsToDisable: []
     connectionsToEnable: []
+    teleportLocation: {fileID: 0}
   - action: {fileID: 11400000, guid: b0e6e7cd5f127b142be24b80c2fdc6c0, type: 2}
     response: Give me payment!
     textToMatch: albion
@@ -1523,6 +1540,7 @@ MonoBehaviour:
     - {fileID: 1560103672}
     connectionsToDisable: []
     connectionsToEnable: []
+    teleportLocation: {fileID: 0}
 --- !u!1 &1022396111
 GameObject:
   m_ObjectHideFlags: 0
@@ -2395,6 +2413,7 @@ MonoBehaviour:
   itemName: ferryman
   description: A robed Ferryman
   playerCanTake: 0
+  playerCanGiveTo: 0
   playerCanTalkTo: 1
   itemEnabled: 1
   targetItem: {fileID: 0}
@@ -2406,6 +2425,7 @@ MonoBehaviour:
     itemsToEnable: []
     connectionsToDisable: []
     connectionsToEnable: []
+    teleportLocation: {fileID: 0}
   - action: {fileID: 11400000, guid: b0e6e7cd5f127b142be24b80c2fdc6c0, type: 2}
     response: Where do you seek?
     textToMatch: merlin
@@ -2415,6 +2435,7 @@ MonoBehaviour:
     - {fileID: 1019458802}
     connectionsToDisable: []
     connectionsToEnable: []
+    teleportLocation: {fileID: 0}
 --- !u!1 &1375390118
 GameObject:
   m_ObjectHideFlags: 0
@@ -2459,13 +2480,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c760e461bb982a4599c2fe6332d8176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Tapestry
+  itemName: tapestry
   description: A thread worn tapestry
   playerCanTake: 0
+  playerCanGiveTo: 0
   playerCanTalkTo: 0
   itemEnabled: 1
   targetItem: {fileID: 0}
-  interactions: []
+  interactions:
+  - action: {fileID: 11400000, guid: 29d4a8597f476074ca64bb133730bbfa, type: 2}
+    response: You wipe away years of dust and cobwebs to reveal the tapestry is a
+      moth-eaten depiction of ancient Albion. You mouth the word, "Albion".
+    textToMatch: 
+    itemsToDisable: []
+    itemsToEnable: []
+    connectionsToDisable: []
+    connectionsToEnable: []
+    teleportLocation: {fileID: 0}
 --- !u!1 &1381474237
 GameObject:
   m_ObjectHideFlags: 0
@@ -3133,6 +3164,7 @@ MonoBehaviour:
   itemName: ferryman
   description: A robed Ferryman
   playerCanTake: 0
+  playerCanGiveTo: 1
   playerCanTalkTo: 1
   itemEnabled: 0
   targetItem: {fileID: 0}
@@ -3144,6 +3176,15 @@ MonoBehaviour:
     itemsToEnable: []
     connectionsToDisable: []
     connectionsToEnable: []
+    teleportLocation: {fileID: 0}
+  - action: {fileID: 11400000, guid: 361dbafeecc0fc1499d75f5e5b874fcf, type: 2}
+    response: 
+    textToMatch: goldencoins
+    itemsToDisable: []
+    itemsToEnable: []
+    connectionsToDisable: []
+    connectionsToEnable: []
+    teleportLocation: {fileID: 1844007479}
 --- !u!1 &1622504585
 GameObject:
   m_ObjectHideFlags: 0
@@ -3337,6 +3378,7 @@ MonoBehaviour:
   itemName: Tree
   description: A large tree
   playerCanTake: 0
+  playerCanGiveTo: 0
   playerCanTalkTo: 0
   itemEnabled: 1
   targetItem: {fileID: 0}
@@ -3686,6 +3728,7 @@ MonoBehaviour:
   itemName: Statue
   description: a stone statue smashed at the waist
   playerCanTake: 0
+  playerCanGiveTo: 0
   playerCanTalkTo: 0
   itemEnabled: 1
   targetItem: {fileID: 0}
@@ -3737,6 +3780,7 @@ MonoBehaviour:
   itemName: well
   description: an old stone well
   playerCanTake: 0
+  playerCanGiveTo: 0
   playerCanTalkTo: 0
   itemEnabled: 1
   targetItem: {fileID: 0}
@@ -3756,6 +3800,7 @@ MonoBehaviour:
     - {fileID: 1167316549}
     - {fileID: 1381474239}
     connectionsToEnable: []
+    teleportLocation: {fileID: 0}
 --- !u!1 &2133295766
 GameObject:
   m_ObjectHideFlags: 0
