@@ -10,18 +10,6 @@ public class Location : MonoBehaviour
     public Connection[] connections;
     public List<Item> items = new List<Item>();
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public string GetItemText()
     {
         if (items.Count == 0) return "";

@@ -9,18 +9,6 @@ public class Player : MonoBehaviour
     public Location currentLocation;
     public List<Item> inventory = new List<Item>();
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public bool ChangeLocation(GameController controller, string connetionNoun)
     {
         Connection connection = currentLocation.GetConnection(connetionNoun);
@@ -49,6 +37,20 @@ public class Player : MonoBehaviour
             return true;
 
         if(currentLocation.HasItem(item.targetItem))
+            return true;
+
+        return false;
+    }
+
+    internal bool CanReadItem(GameController controller, Item item)
+    {
+        if (item.targetItem == null)
+            return true;
+
+        if (HasItem(item.targetItem))
+            return true;
+
+        if (currentLocation.HasItem(item.targetItem))
             return true;
 
         return false;

@@ -9,6 +9,7 @@ public class Item : MonoBehaviour
     public bool playerCanTake;
     public bool playerCanGiveTo = false;
     public bool playerCanTalkTo = false;
+    public bool playerCanRead = false;
     public bool itemEnabled = true;
     public Item targetItem = null;
     public Interaction[] interactions;
