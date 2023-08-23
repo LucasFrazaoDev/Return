@@ -5,8 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public class Interaction
 {
-    [TextArea] public string response;
     [SerializeField] private Action m_action;
+    [TextArea] public string response;
     [SerializeField] private string m_textToMatch;
     [SerializeField] private List<Item> m_itemsToDisable = new List<Item>();
     [SerializeField] private List<Item> m_itemsToEnable = new List<Item>();

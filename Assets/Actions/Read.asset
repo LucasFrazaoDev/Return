@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0b2682488066274facce077af18822f, type: 3}
   m_Name: Read
   m_EditorClassIdentifier: 
-  keyword: read
+  m_keyword: read

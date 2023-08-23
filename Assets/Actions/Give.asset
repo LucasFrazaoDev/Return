@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fae23b8f22d0914d932cac401423017, type: 3}
   m_Name: Give
   m_EditorClassIdentifier: 
-  keyword: give
+  m_keyword: give

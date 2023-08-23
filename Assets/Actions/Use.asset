@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 158f671d26fd72a41bec0b8f906ebe2b, type: 3}
   m_Name: Use
   m_EditorClassIdentifier: 
-  keyword: use
+  m_keyword: use

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08c30da4acac36943baa00b349472015, type: 3}
   m_Name: TalkTo
   m_EditorClassIdentifier: 
-  keyword: talkto
+  m_keyword: talkto

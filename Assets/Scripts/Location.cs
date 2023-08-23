@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class Location : MonoBehaviour
 {
-    [TextArea] public string description;
-
     [SerializeField] private string m_locationName;
     [SerializeField] private Connection[] m_connections;
     [SerializeField] private List<Item> m_items = new List<Item>();
+
+    [TextArea] public string description;
 
     public string LocationName { get => m_locationName; set => m_locationName = value; }
     public Connection[] Connections { get => m_connections; set => m_connections = value; }
