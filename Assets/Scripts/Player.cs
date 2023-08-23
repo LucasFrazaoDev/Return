@@ -6,17 +6,20 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public Location currentLocation;
-    public List<Item> inventory = new List<Item>();
+    [SerializeField] private Location m_currentLocation;
+    [SerializeField] private List<Item> m_inventory = new List<Item>();
+
+    public Location CurrentLocation { get => m_currentLocation; set => m_currentLocation = value; }
+    public List<Item> Inventory { get => m_inventory; set => m_inventory = value; }
 
     public bool ChangeLocation(GameController controller, string connetionNoun)
     {
-        Connection connection = currentLocation.GetConnection(connetionNoun);
+        Connection connection = CurrentLocation.GetConnection(connetionNoun);
         if(connection != null)
         {
-            if (connection.connectionEnabled)
+            if (connection.ConnectionEnabled)
             {
-                currentLocation = connection.location;
+                CurrentLocation = connection.Location;
                 return true;
             }
         }
@@ -25,18 +28,18 @@ public class Player : MonoBehaviour
 
     public void Teleport(GameController controller, Location destination)
     {
-        currentLocation = destination;
+        CurrentLocation = destination;
     }
 
     internal bool CanUseItem(GameController controller, Item item)
     {
-        if (item.targetItem == null)
+        if (item.TargetItem == null)
             return true;
 
-        if (HasItem(item.targetItem))
+        if (HasItem(item.TargetItem))
             return true;
 
-        if(currentLocation.HasItem(item.targetItem))
+        if(CurrentLocation.HasItem(item.TargetItem))
             return true;
 
         return false;
@@ -44,13 +47,13 @@ public class Player : MonoBehaviour
 
     internal bool CanReadItem(GameController controller, Item item)
     {
-        if (item.targetItem == null)
+        if (item.TargetItem == null)
             return true;
 
-        if (HasItem(item.targetItem))
+        if (HasItem(item.TargetItem))
             return true;
 
-        if (currentLocation.HasItem(item.targetItem))
+        if (CurrentLocation.HasItem(item.TargetItem))
             return true;
 
         return false;
@@ -58,9 +61,9 @@ public class Player : MonoBehaviour
 
     private bool HasItem(Item itemToCheck)
     {
-        foreach (Item item in inventory)
+        foreach (Item item in Inventory)
         {
-            if(item == itemToCheck && item.itemEnabled)
+            if(item == itemToCheck && item.ItemEnabled)
                 return true;
         }
         return false;
@@ -68,17 +71,17 @@ public class Player : MonoBehaviour
 
     internal bool CanTalkToItem(GameController controller, Item item)
     {
-        return item.playerCanTalkTo;
+        return item.PlayerCanTalkTo;
     }
 
     internal bool CanGiveToItem(GameController controller, Item item)
     {
-        return item.playerCanGiveTo;
+        return item.PlayerCanGiveTo;
     }
 
     public bool HasItemByName(string noun)
     {
-        foreach (Item item in inventory)
+        foreach (Item item in Inventory)
             if(item.itemName.ToLower() == noun.ToLower()) return true;
         return false;
     }

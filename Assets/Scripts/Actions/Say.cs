@@ -8,19 +8,19 @@ public class Say : Action
 {
     public override void RespondToInput(GameController controller, string noun)
     {
-        if (SayToItem(controller, controller.player.currentLocation.items, noun))
+        if (SayToItem(controller, controller.Player.CurrentLocation.Items, noun))
             return;
 
-        controller.currentText.text = "Nothing responds!";
+        controller.CurrentText.text = "Nothing responds!";
     }
 
     private bool SayToItem(GameController controller, List<Item> items, string noun)
     {
         foreach (Item item in items)
         {
-            if(item.itemEnabled)
+            if(item.ItemEnabled)
             {
-                if (controller.player.CanTalkToItem(controller, item))
+                if (controller.Player.CanTalkToItem(controller, item))
                 {
                     if(item.InteractWith(controller, "say", noun))
                         return true;

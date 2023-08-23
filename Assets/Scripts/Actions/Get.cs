@@ -7,19 +7,19 @@ public class Get : Action
 {
     public override void RespondToInput(GameController controller, string noun)
     {
-        foreach (Item item in controller.player.currentLocation.items)
+        foreach (Item item in controller.Player.CurrentLocation.Items)
         {
-            if(item.itemEnabled && item.itemName == noun)
+            if(item.ItemEnabled && item.itemName == noun)
             {
-                if (item.playerCanTake)
+                if (item.PlayerCanTake)
                 {
-                    controller.player.inventory.Add(item);
-                    controller.player.currentLocation.items.Remove(item);
-                    controller.currentText.text = "You take the " + noun;
+                    controller.Player.Inventory.Add(item);
+                    controller.Player.CurrentLocation.Items.Remove(item);
+                    controller.CurrentText.text = "You take the " + noun;
                     return;
                 }
             }
         }
-        controller.currentText.text = "You can't get that";
+        controller.CurrentText.text = "You can't get that";
     }
 }

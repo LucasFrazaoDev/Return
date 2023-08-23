@@ -167,10 +167,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e634a8f8d31febe4d9da6ca8e55dfc9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectionName: West
-  description: To the west is the island
-  location: {fileID: 967324390}
-  connectionEnabled: 1
+  m_connectionName: 
+  m_description: 
+  m_location: {fileID: 0}
+  m_connectionEnabled: 0
 --- !u!1 &60921877
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,11 +200,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e634a8f8d31febe4d9da6ca8e55dfc9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectionName: North
-  description: Steps snake northward, hiigh up the rock face leading to a dark cave
-    entrance
-  location: {fileID: 1210403038}
-  connectionEnabled: 1
+  m_connectionName: 
+  m_description: 
+  m_location: {fileID: 0}
+  m_connectionEnabled: 0
 --- !u!4 &60921879
 Transform:
   m_ObjectHideFlags: 0
@@ -249,21 +248,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39b96b878eba4aa4489fc2d0746905be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1650749725}
-  textEntryField: {fileID: 1553171080}
-  logText: {fileID: 399174770}
-  currentText: {fileID: 1393591170}
-  actions:
-  - {fileID: 11400000, guid: c3f248a9476c8c140bf741849a617ccf, type: 2}
-  - {fileID: 11400000, guid: ea69e96e1d8239c4aa17beaf27bef5ba, type: 2}
-  - {fileID: 11400000, guid: d4d04920988f76d46910545369c29af1, type: 2}
-  - {fileID: 11400000, guid: 45b91d16d2a52ed4aba513df57b36e98, type: 2}
-  - {fileID: 11400000, guid: 29d4a8597f476074ca64bb133730bbfa, type: 2}
-  - {fileID: 11400000, guid: 9e5b3e36f46f31d4198f24848a9c0f27, type: 2}
-  - {fileID: 11400000, guid: 170d006478a0edf498de85bfe529d701, type: 2}
-  - {fileID: 11400000, guid: b0e6e7cd5f127b142be24b80c2fdc6c0, type: 2}
-  - {fileID: 11400000, guid: 361dbafeecc0fc1499d75f5e5b874fcf, type: 2}
-  - {fileID: 11400000, guid: 5e39a4752f1058e4ebd744ed641b70a4, type: 2}
+  m_textEntryField: {fileID: 0}
+  m_logText: {fileID: 0}
+  m_currentText: {fileID: 0}
+  m_player: {fileID: 0}
+  m_actions: []
   introText: "A thunder crack of splintering wood wrenches you from darkness. A scream
     of shock, heat and \r\nsweat floods onto the cold shaking ground. Reborn in moss
     and dirt you take one gasping breath of\r\nacrid smoke then another, and another.
@@ -335,30 +324,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: staff
   description: A staff
-  playerCanTake: 1
-  playerCanGiveTo: 0
-  playerCanTalkTo: 0
-  playerCanRead: 0
-  itemEnabled: 1
-  targetItem: {fileID: 934177437}
-  interactions:
-  - action: {fileID: 11400000, guid: 9e5b3e36f46f31d4198f24848a9c0f27, type: 2}
-    response: "You lunge forward. The staff glows bursts with light, in one arcing
-      blow the serpents head is \r\ncleaved from its body. Coins erupt from the severed
-      neck, showering the room with gold. As the body\r\nslumps to the floor the
-      coins pump forth like blood"
-    textToMatch: 
-    itemsToDisable:
-    - {fileID: 934177437}
-    itemsToEnable:
-    - {fileID: 189137072}
-    connectionsToDisable: []
-    connectionsToEnable:
-    - {fileID: 1274200317}
-    - {fileID: 1146660054}
-    - {fileID: 1167316549}
-    - {fileID: 1381474239}
-    teleportLocation: {fileID: 0}
+  m_playerCanTake: 0
+  m_playerCanGiveTo: 0
+  m_playerCanTalkTo: 0
+  m_playerCanRead: 0
+  m_itemEnabled: 1
+  m_targetItem: {fileID: 0}
+  m_interactions: []
 --- !u!1 &127141388
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,12 +376,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398bc9d6609cefe49aaff14badcb7445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  locationName: East Shore
   description: You are on a black rock shore that leads to a still silver sea with
     no horizon
-  connections:
-  - {fileID: 54894273}
-  items: []
+  m_locationName: 
+  m_connections: []
+  m_items: []
 --- !u!1 &141824798
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,21 +427,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: plaque
   description: A plaque embedded in the floor, it has something written on it.
-  playerCanTake: 0
-  playerCanGiveTo: 0
-  playerCanTalkTo: 0
-  playerCanRead: 1
-  itemEnabled: 1
-  targetItem: {fileID: 0}
-  interactions:
-  - action: {fileID: 11400000, guid: 5e39a4752f1058e4ebd744ed641b70a4, type: 2}
-    response: "The plaque reads: Lord Fraz\xE3o was here!"
-    textToMatch: 
-    itemsToDisable: []
-    itemsToEnable: []
-    connectionsToDisable: []
-    connectionsToEnable: []
-    teleportLocation: {fileID: 0}
+  m_playerCanTake: 0
+  m_playerCanGiveTo: 0
+  m_playerCanTalkTo: 0
+  m_playerCanRead: 0
+  m_itemEnabled: 1
+  m_targetItem: {fileID: 0}
+  m_interactions: []
 --- !u!1 &189137070
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,13 +480,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: goldencoins
   description: <b>goldencoins</b>
-  playerCanTake: 1
-  playerCanGiveTo: 0
-  playerCanTalkTo: 0
-  playerCanRead: 0
-  itemEnabled: 0
-  targetItem: {fileID: 0}
-  interactions: []
+  m_playerCanTake: 0
+  m_playerCanGiveTo: 0
+  m_playerCanTalkTo: 0
+  m_playerCanRead: 0
+  m_itemEnabled: 1
+  m_targetItem: {fileID: 0}
+  m_interactions: []
 --- !u!1 &213324371
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,13 +636,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398bc9d6609cefe49aaff14badcb7445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  locationName: East AnteChamber
   description: 'A dark antechamber, the remnants of the smashed statue scattered
     across the dusty stone floor. '
-  connections:
-  - {fileID: 1470411362}
-  items:
-  - {fileID: 921991519}
+  m_locationName: 
+  m_connections: []
+  m_items: []
 --- !u!1 &399174768
 GameObject:
   m_ObjectHideFlags: 0
@@ -1123,10 +1084,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e634a8f8d31febe4d9da6ca8e55dfc9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectionName: South
-  description: Returns to the chapel
-  location: {fileID: 1210403038}
-  connectionEnabled: 1
+  m_connectionName: 
+  m_description: 
+  m_location: {fileID: 0}
+  m_connectionEnabled: 0
 --- !u!4 &862301595
 Transform:
   m_ObjectHideFlags: 0
@@ -1186,10 +1147,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e634a8f8d31febe4d9da6ca8e55dfc9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectionName: East
-  description: East returns to the Chapel knave
-  location: {fileID: 1210403038}
-  connectionEnabled: 1
+  m_connectionName: 
+  m_description: 
+  m_location: {fileID: 0}
+  m_connectionEnabled: 0
 --- !u!1 &921991517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1236,22 +1197,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: head
   description: A smashed statue head
-  playerCanTake: 0
-  playerCanGiveTo: 0
-  playerCanTalkTo: 0
-  playerCanRead: 0
-  itemEnabled: 1
-  targetItem: {fileID: 0}
-  interactions:
-  - action: {fileID: 11400000, guid: 29d4a8597f476074ca64bb133730bbfa, type: 2}
-    response: You pick up the stone head in both hands. You turn the face towards
-      you, its looks familiar. You mouth the word, "Merlin".
-    textToMatch: 
-    itemsToDisable: []
-    itemsToEnable: []
-    connectionsToDisable: []
-    connectionsToEnable: []
-    teleportLocation: {fileID: 0}
+  m_playerCanTake: 0
+  m_playerCanGiveTo: 0
+  m_playerCanTalkTo: 0
+  m_playerCanRead: 0
+  m_itemEnabled: 1
+  m_targetItem: {fileID: 0}
+  m_interactions: []
 --- !u!1 &932673250
 GameObject:
   m_ObjectHideFlags: 0
@@ -1375,13 +1327,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Serpent
   description: A serpent
-  playerCanTake: 0
-  playerCanGiveTo: 0
-  playerCanTalkTo: 0
-  playerCanRead: 0
-  itemEnabled: 0
-  targetItem: {fileID: 0}
-  interactions: []
+  m_playerCanTake: 0
+  m_playerCanGiveTo: 0
+  m_playerCanTalkTo: 0
+  m_playerCanRead: 0
+  m_itemEnabled: 1
+  m_targetItem: {fileID: 0}
+  m_interactions: []
 --- !u!1 &959289275
 GameObject:
   m_ObjectHideFlags: 0
@@ -1427,12 +1379,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398bc9d6609cefe49aaff14badcb7445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  locationName: West Shore
   description: You are on a black rock shore that leads to a still silver sea with
     no horizon
-  connections:
-  - {fileID: 1622504586}
-  items: []
+  m_locationName: 
+  m_connections: []
+  m_items: []
 --- !u!1 &967324388
 GameObject:
   m_ObjectHideFlags: 0
@@ -1481,15 +1432,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398bc9d6609cefe49aaff14badcb7445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  locationName: Island
   description: You stand on a misty island.
-  connections:
-  - {fileID: 1419665080}
-  - {fileID: 1022396113}
-  - {fileID: 1388480170}
-  - {fileID: 1019306809}
-  items:
-  - {fileID: 141824800}
+  m_locationName: 
+  m_connections: []
+  m_items: []
 --- !u!1 &1019306807
 GameObject:
   m_ObjectHideFlags: 0
@@ -1534,10 +1480,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e634a8f8d31febe4d9da6ca8e55dfc9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectionName: West
-  description: To the west lies a shore
-  location: {fileID: 959289277}
-  connectionEnabled: 1
+  m_connectionName: 
+  m_description: 
+  m_location: {fileID: 0}
+  m_connectionEnabled: 0
 --- !u!1 &1019458800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1584,31 +1530,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: ferryman
   description: A robed Ferryman
-  playerCanTake: 0
-  playerCanGiveTo: 0
-  playerCanTalkTo: 1
-  playerCanRead: 0
-  itemEnabled: 0
-  targetItem: {fileID: 0}
-  interactions:
-  - action: {fileID: 11400000, guid: 170d006478a0edf498de85bfe529d701, type: 2}
-    response: Where do you seek?
-    textToMatch: 
-    itemsToDisable: []
-    itemsToEnable: []
-    connectionsToDisable: []
-    connectionsToEnable: []
-    teleportLocation: {fileID: 0}
-  - action: {fileID: 11400000, guid: b0e6e7cd5f127b142be24b80c2fdc6c0, type: 2}
-    response: Give me payment!
-    textToMatch: albion
-    itemsToDisable:
-    - {fileID: 1019458802}
-    itemsToEnable:
-    - {fileID: 1560103672}
-    connectionsToDisable: []
-    connectionsToEnable: []
-    teleportLocation: {fileID: 0}
+  m_playerCanTake: 0
+  m_playerCanGiveTo: 0
+  m_playerCanTalkTo: 0
+  m_playerCanRead: 0
+  m_itemEnabled: 1
+  m_targetItem: {fileID: 0}
+  m_interactions: []
 --- !u!1 &1022396111
 GameObject:
   m_ObjectHideFlags: 0
@@ -1653,10 +1581,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e634a8f8d31febe4d9da6ca8e55dfc9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectionName: South
-  description: To the south you see a large tree
-  location: {fileID: 1649453373}
-  connectionEnabled: 1
+  m_connectionName: 
+  m_description: 
+  m_location: {fileID: 0}
+  m_connectionEnabled: 0
 --- !u!1 &1044512835
 GameObject:
   m_ObjectHideFlags: 0
@@ -1702,13 +1630,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398bc9d6609cefe49aaff14badcb7445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  locationName: West AnteChamber
   description: A dark antechamber, smashed and upturned pews, the wall is covered
     with faded artworks and tapestries.
-  connections:
-  - {fileID: 918452240}
-  items:
-  - {fileID: 1375390120}
+  m_locationName: 
+  m_connections: []
+  m_items: []
 --- !u!1 &1085638413
 GameObject:
   m_ObjectHideFlags: 0
@@ -1753,10 +1679,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e634a8f8d31febe4d9da6ca8e55dfc9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectionName: North
-  description: To the north is the rest of the island
-  location: {fileID: 967324390}
-  connectionEnabled: 1
+  m_connectionName: 
+  m_description: 
+  m_location: {fileID: 0}
+  m_connectionEnabled: 0
 --- !u!1 &1146660052
 GameObject:
   m_ObjectHideFlags: 0
@@ -1801,10 +1727,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e634a8f8d31febe4d9da6ca8e55dfc9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectionName: South
-  description: To the south the steps snake down the cliff face to the shore
-  location: {fileID: 1724582277}
-  connectionEnabled: 1
+  m_connectionName: 
+  m_description: 
+  m_location: {fileID: 0}
+  m_connectionEnabled: 0
 --- !u!1 &1167316547
 GameObject:
   m_ObjectHideFlags: 0
@@ -1849,10 +1775,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e634a8f8d31febe4d9da6ca8e55dfc9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectionName: East
-  description: There is an antechamber to the east
-  location: {fileID: 218178516}
-  connectionEnabled: 1
+  m_connectionName: 
+  m_description: 
+  m_location: {fileID: 0}
+  m_connectionEnabled: 0
 --- !u!1 &1195033548
 GameObject:
   m_ObjectHideFlags: 0
@@ -2056,19 +1982,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398bc9d6609cefe49aaff14badcb7445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  locationName: Chapel
   description: 'you see a dark ruined chapel. In the centre of a dark stone room
     a smashed statue, the plinth and lower half of a robed figure. '
-  connections:
-  - {fileID: 1274200317}
-  - {fileID: 1146660054}
-  - {fileID: 1167316549}
-  - {fileID: 1381474239}
-  items:
-  - {fileID: 1932759690}
-  - {fileID: 1946403417}
-  - {fileID: 189137072}
-  - {fileID: 934177437}
+  m_locationName: 
+  m_connections: []
+  m_items: []
 --- !u!1 &1224451540
 GameObject:
   m_ObjectHideFlags: 0
@@ -2098,11 +2016,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e634a8f8d31febe4d9da6ca8e55dfc9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectionName: North
-  description: Peering north across the sea to a dark shape hovers on the edge of
-    sight
-  location: {fileID: 1724582277}
-  connectionEnabled: 1
+  m_connectionName: 
+  m_description: 
+  m_location: {fileID: 0}
+  m_connectionEnabled: 0
 --- !u!4 &1224451542
 Transform:
   m_ObjectHideFlags: 0
@@ -2415,10 +2332,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e634a8f8d31febe4d9da6ca8e55dfc9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectionName: North
-  description: To the north a carved wooden door
-  location: {fileID: 1870321662}
-  connectionEnabled: 1
+  m_connectionName: 
+  m_description: 
+  m_location: {fileID: 0}
+  m_connectionEnabled: 0
 --- !u!4 &1274200318
 Transform:
   m_ObjectHideFlags: 0
@@ -2480,31 +2397,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: ferryman
   description: A robed Ferryman
-  playerCanTake: 0
-  playerCanGiveTo: 0
-  playerCanTalkTo: 1
-  playerCanRead: 0
-  itemEnabled: 1
-  targetItem: {fileID: 0}
-  interactions:
-  - action: {fileID: 11400000, guid: 170d006478a0edf498de85bfe529d701, type: 2}
-    response: Who is it that seek passage?
-    textToMatch: 
-    itemsToDisable: []
-    itemsToEnable: []
-    connectionsToDisable: []
-    connectionsToEnable: []
-    teleportLocation: {fileID: 0}
-  - action: {fileID: 11400000, guid: b0e6e7cd5f127b142be24b80c2fdc6c0, type: 2}
-    response: Where do you seek?
-    textToMatch: merlin
-    itemsToDisable:
-    - {fileID: 1341913208}
-    itemsToEnable:
-    - {fileID: 1019458802}
-    connectionsToDisable: []
-    connectionsToEnable: []
-    teleportLocation: {fileID: 0}
+  m_playerCanTake: 0
+  m_playerCanGiveTo: 0
+  m_playerCanTalkTo: 0
+  m_playerCanRead: 0
+  m_itemEnabled: 1
+  m_targetItem: {fileID: 0}
+  m_interactions: []
 --- !u!1 &1375390118
 GameObject:
   m_ObjectHideFlags: 0
@@ -2551,22 +2450,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: tapestry
   description: A thread worn tapestry
-  playerCanTake: 0
-  playerCanGiveTo: 0
-  playerCanTalkTo: 0
-  playerCanRead: 0
-  itemEnabled: 1
-  targetItem: {fileID: 0}
-  interactions:
-  - action: {fileID: 11400000, guid: 29d4a8597f476074ca64bb133730bbfa, type: 2}
-    response: You wipe away years of dust and cobwebs to reveal the tapestry is a
-      moth-eaten depiction of ancient Albion. You mouth the word, "Albion".
-    textToMatch: 
-    itemsToDisable: []
-    itemsToEnable: []
-    connectionsToDisable: []
-    connectionsToEnable: []
-    teleportLocation: {fileID: 0}
+  m_playerCanTake: 0
+  m_playerCanGiveTo: 0
+  m_playerCanTalkTo: 0
+  m_playerCanRead: 0
+  m_itemEnabled: 1
+  m_targetItem: {fileID: 0}
+  m_interactions: []
 --- !u!1 &1381474237
 GameObject:
   m_ObjectHideFlags: 0
@@ -2611,10 +2501,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e634a8f8d31febe4d9da6ca8e55dfc9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectionName: West
-  description: There is an antechamber to the west
-  location: {fileID: 1044512837}
-  connectionEnabled: 1
+  m_connectionName: 
+  m_description: 
+  m_location: {fileID: 0}
+  m_connectionEnabled: 0
 --- !u!1 &1388480168
 GameObject:
   m_ObjectHideFlags: 0
@@ -2659,10 +2549,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e634a8f8d31febe4d9da6ca8e55dfc9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectionName: East
-  description: To the east lies a shor
-  location: {fileID: 127141390}
-  connectionEnabled: 1
+  m_connectionName: 
+  m_description: 
+  m_location: {fileID: 0}
+  m_connectionEnabled: 0
 --- !u!1 &1393591168
 GameObject:
   m_ObjectHideFlags: 0
@@ -2846,10 +2736,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e634a8f8d31febe4d9da6ca8e55dfc9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectionName: North
-  description: There is a bridge to the north
-  location: {fileID: 1538017212}
-  connectionEnabled: 1
+  m_connectionName: 
+  m_description: 
+  m_location: {fileID: 0}
+  m_connectionEnabled: 0
 --- !u!1 &1433118139
 GameObject:
   m_ObjectHideFlags: 0
@@ -2894,10 +2784,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e634a8f8d31febe4d9da6ca8e55dfc9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectionName: South
-  description: The wooden bridge leads south over the sea
-  location: {fileID: 1538017212}
-  connectionEnabled: 1
+  m_connectionName: 
+  m_description: 
+  m_location: {fileID: 0}
+  m_connectionEnabled: 0
 --- !u!1 &1470411361
 GameObject:
   m_ObjectHideFlags: 0
@@ -2927,10 +2817,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e634a8f8d31febe4d9da6ca8e55dfc9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectionName: West
-  description: West returns to the Chapel knave
-  location: {fileID: 1210403038}
-  connectionEnabled: 1
+  m_connectionName: 
+  m_description: 
+  m_location: {fileID: 0}
+  m_connectionEnabled: 0
 --- !u!4 &1470411363
 Transform:
   m_ObjectHideFlags: 0
@@ -2992,14 +2882,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398bc9d6609cefe49aaff14badcb7445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  locationName: Bridge
   description: "You find yourself at the water\u2019s edge. Sea worn planks tied
     with barnacle encrusted ropes form a bridge over\r\nthe water fading into the
     fog.\r"
-  connections:
-  - {fileID: 1224451541}
-  - {fileID: 2133295767}
-  items: []
+  m_locationName: 
+  m_connections: []
+  m_items: []
 --- !u!1 &1553171078
 GameObject:
   m_ObjectHideFlags: 0
@@ -3233,29 +3121,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: ferryman
   description: A robed Ferryman
-  playerCanTake: 0
-  playerCanGiveTo: 1
-  playerCanTalkTo: 1
-  playerCanRead: 0
-  itemEnabled: 0
-  targetItem: {fileID: 0}
-  interactions:
-  - action: {fileID: 11400000, guid: 170d006478a0edf498de85bfe529d701, type: 2}
-    response: Give me payment!
-    textToMatch: 
-    itemsToDisable: []
-    itemsToEnable: []
-    connectionsToDisable: []
-    connectionsToEnable: []
-    teleportLocation: {fileID: 0}
-  - action: {fileID: 11400000, guid: 361dbafeecc0fc1499d75f5e5b874fcf, type: 2}
-    response: 
-    textToMatch: goldencoins
-    itemsToDisable: []
-    itemsToEnable: []
-    connectionsToDisable: []
-    connectionsToEnable: []
-    teleportLocation: {fileID: 1844007479}
+  m_playerCanTake: 0
+  m_playerCanGiveTo: 0
+  m_playerCanTalkTo: 0
+  m_playerCanRead: 0
+  m_itemEnabled: 1
+  m_targetItem: {fileID: 0}
+  m_interactions: []
 --- !u!1 &1622504585
 GameObject:
   m_ObjectHideFlags: 0
@@ -3285,10 +3157,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e634a8f8d31febe4d9da6ca8e55dfc9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectionName: East
-  description: To the east is the island
-  location: {fileID: 967324390}
-  connectionEnabled: 1
+  m_connectionName: 
+  m_description: 
+  m_location: {fileID: 0}
+  m_connectionEnabled: 0
 --- !u!4 &1622504587
 Transform:
   m_ObjectHideFlags: 0
@@ -3349,12 +3221,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398bc9d6609cefe49aaff14badcb7445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  locationName: Tree
   description: You stand by the tree and touch its blackened and gnarled surface
-  connections:
-  - {fileID: 1085638415}
-  items:
-  - {fileID: 1712861988}
+  m_locationName: 
+  m_connections: []
+  m_items: []
 --- !u!1 &1650749724
 GameObject:
   m_ObjectHideFlags: 0
@@ -3384,9 +3254,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42fbaac18568cf2488b871b80a6a596c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLocation: {fileID: 967324390}
-  inventory:
-  - {fileID: 111405901}
+  m_currentLocation: {fileID: 0}
+  m_inventory: []
 --- !u!4 &1650749726
 Transform:
   m_ObjectHideFlags: 0
@@ -3448,13 +3317,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Tree
   description: A large tree
-  playerCanTake: 0
-  playerCanGiveTo: 0
-  playerCanTalkTo: 0
-  playerCanRead: 0
-  itemEnabled: 1
-  targetItem: {fileID: 0}
-  interactions: []
+  m_playerCanTake: 0
+  m_playerCanGiveTo: 0
+  m_playerCanTalkTo: 0
+  m_playerCanRead: 0
+  m_itemEnabled: 1
+  m_targetItem: {fileID: 0}
+  m_interactions: []
 --- !u!1 &1724582275
 GameObject:
   m_ObjectHideFlags: 0
@@ -3501,16 +3370,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398bc9d6609cefe49aaff14badcb7445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  locationName: Causeway
   description: 'Reaching the shore, the walls of an ancient fortification are carved
     into the cliff face. At the top of the
 
     cliff a stone chapel looks out over
     the sea,'
-  connections:
-  - {fileID: 60921878}
-  - {fileID: 1433118141}
-  items: []
+  m_locationName: 
+  m_connections: []
+  m_items: []
 --- !u!1 &1753358415
 GameObject:
   m_ObjectHideFlags: 0
@@ -3607,13 +3474,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398bc9d6609cefe49aaff14badcb7445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  locationName: The End
   description: "The Ferryman\u2019s hand clenches around the gold coins he moves
     aside and you step onto the boat. As he \r\ncasts off you look back once at this
     ghost land and then turn to face a wall of fog as you drift silently into the
     \r\nunknown."
-  connections: []
-  items: []
+  m_locationName: 
+  m_connections: []
+  m_items: []
 --- !u!1 &1870321660
 GameObject:
   m_ObjectHideFlags: 0
@@ -3659,16 +3526,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 398bc9d6609cefe49aaff14badcb7445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  locationName: Dock
   description: "You find yourself walking down a stone jetty, as you move forward,
     slowly a hooded figure \r\nmaterialises from the mist. A Ferryman stands in his
     boat, it rocks in the gathering wind ringing the\r\narrival bell. "
-  connections:
-  - {fileID: 862301594}
-  items:
-  - {fileID: 1341913208}
-  - {fileID: 1019458802}
-  - {fileID: 1560103672}
+  m_locationName: 
+  m_connections: []
+  m_items: []
 --- !u!1 &1877820659
 GameObject:
   m_ObjectHideFlags: 0
@@ -3800,13 +3663,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Statue
   description: a stone statue smashed at the waist
-  playerCanTake: 0
-  playerCanGiveTo: 0
-  playerCanTalkTo: 0
-  playerCanRead: 0
-  itemEnabled: 1
-  targetItem: {fileID: 0}
-  interactions: []
+  m_playerCanTake: 0
+  m_playerCanGiveTo: 0
+  m_playerCanTalkTo: 0
+  m_playerCanRead: 0
+  m_itemEnabled: 1
+  m_targetItem: {fileID: 0}
+  m_interactions: []
 --- !u!1 &1946403415
 GameObject:
   m_ObjectHideFlags: 0
@@ -3853,29 +3716,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: well
   description: an old stone well
-  playerCanTake: 0
-  playerCanGiveTo: 0
-  playerCanTalkTo: 0
-  playerCanRead: 0
-  itemEnabled: 1
-  targetItem: {fileID: 0}
-  interactions:
-  - action: {fileID: 11400000, guid: 29d4a8597f476074ca64bb133730bbfa, type: 2}
-    response: Looking into the well you see nothing but two glowing eyes and then
-      rows of sparkling teeth rushing up to meet you. You fall back and a great serpent
-      bursts forth coiling itself round the well towering over you
-    textToMatch: 
-    itemsToDisable:
-    - {fileID: 1946403417}
-    itemsToEnable:
-    - {fileID: 934177437}
-    connectionsToDisable:
-    - {fileID: 1274200317}
-    - {fileID: 1146660054}
-    - {fileID: 1167316549}
-    - {fileID: 1381474239}
-    connectionsToEnable: []
-    teleportLocation: {fileID: 0}
+  m_playerCanTake: 0
+  m_playerCanGiveTo: 0
+  m_playerCanTalkTo: 0
+  m_playerCanRead: 0
+  m_itemEnabled: 1
+  m_targetItem: {fileID: 0}
+  m_interactions: []
 --- !u!1 &2133295766
 GameObject:
   m_ObjectHideFlags: 0
@@ -3905,10 +3752,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e634a8f8d31febe4d9da6ca8e55dfc9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectionName: South
-  description: To the south is the island
-  location: {fileID: 967324390}
-  connectionEnabled: 1
+  m_connectionName: 
+  m_description: 
+  m_location: {fileID: 0}
+  m_connectionEnabled: 0
 --- !u!4 &2133295768
 Transform:
   m_ObjectHideFlags: 0

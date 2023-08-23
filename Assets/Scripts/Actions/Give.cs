@@ -7,25 +7,25 @@ public class Give : Action
 {
     public override void RespondToInput(GameController controller, string noun)
     {
-        if(controller.player.HasItemByName(noun))
+        if(controller.Player.HasItemByName(noun))
         {
-            if (GiveToItem(controller, controller.player.currentLocation.items, noun))
+            if (GiveToItem(controller, controller.Player.CurrentLocation.Items, noun))
                 return;
             
-            controller.currentText.text = "Nothing takes the " + noun;
+            controller.CurrentText.text = "Nothing takes the " + noun;
             return;
         }
 
-        controller.currentText.text = "You don't have " + noun + " to give.";
+        controller.CurrentText.text = "You don't have " + noun + " to give.";
     }
 
     private bool GiveToItem(GameController controller, List<Item> items, string noun)
     {
         foreach (Item item in items)
         {
-            if (item.itemEnabled)
+            if (item.ItemEnabled)
             {
-                if (controller.player.CanGiveToItem(controller, item))
+                if (controller.Player.CanGiveToItem(controller, item))
                 {
                     if (item.InteractWith(controller, "give", noun))
                         return true;

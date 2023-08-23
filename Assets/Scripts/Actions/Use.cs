@@ -8,13 +8,13 @@ public class Use : Action
     public override void RespondToInput(GameController controller, string noun)
     {
         // use item in room
-        if (UseItem(controller, controller.player.currentLocation.items, noun))
+        if (UseItem(controller, controller.Player.CurrentLocation.Items, noun))
             return;
         // use in inventory
-        if (UseItem(controller, controller.player.inventory, noun))
+        if (UseItem(controller, controller.Player.Inventory, noun))
             return;
 
-        controller.currentText.text = "There is no " + noun;
+        controller.CurrentText.text = "There is no " + noun;
     }
 
     private bool UseItem(GameController controller, List<Item> items, string noun)
@@ -23,12 +23,12 @@ public class Use : Action
         {
             if (item.itemName == noun)
             {
-                if(controller.player.CanUseItem(controller, item))
+                if(controller.Player.CanUseItem(controller, item))
                 {
                     if (item.InteractWith(controller, "use"))
                         return true;
                 }
-                controller.currentText.text = "The " + noun + " does nothing";
+                controller.CurrentText.text = "The " + noun + " does nothing";
                 return true;
             }
         }

@@ -8,13 +8,13 @@ public class Examine : Action
     public override void RespondToInput(GameController controller, string noun)
     {
         // check item in room
-        if (CheckItems(controller, controller.player.currentLocation.items, noun))
+        if (CheckItems(controller, controller.Player.CurrentLocation.Items, noun))
             return;
         // check item in inventory
-        if (CheckItems(controller, controller.player.inventory, noun))
+        if (CheckItems(controller, controller.Player.Inventory, noun))
             return;
 
-        controller.currentText.text = "You can't see a " + noun;
+        controller.CurrentText.text = "You can't see a " + noun;
     }
 
     private bool CheckItems(GameController controller, List<Item> items, string noun)
@@ -26,7 +26,7 @@ public class Examine : Action
                 if (item.InteractWith(controller, "examine"))
                     return true;
 
-                controller.currentText.text = "You see " + item.description;
+                controller.CurrentText.text = "You see " + item.description;
                 return true;
             }
         }

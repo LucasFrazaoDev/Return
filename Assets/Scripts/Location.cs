@@ -5,20 +5,25 @@ using UnityEngine;
 
 public class Location : MonoBehaviour
 {
-    public string locationName;
     [TextArea] public string description;
-    public Connection[] connections;
-    public List<Item> items = new List<Item>();
+
+    [SerializeField] private string m_locationName;
+    [SerializeField] private Connection[] m_connections;
+    [SerializeField] private List<Item> m_items = new List<Item>();
+
+    public string LocationName { get => m_locationName; set => m_locationName = value; }
+    public Connection[] Connections { get => m_connections; set => m_connections = value; }
+    public List<Item> Items { get => m_items; set => m_items = value; }
 
     public string GetItemText()
     {
-        if (items.Count == 0) return "";
+        if (Items.Count == 0) return "";
 
         string result = "You see ";
         bool first = true;
-        foreach (Item item in items)
+        foreach (Item item in Items)
         {
-            if (item.itemEnabled)
+            if (item.ItemEnabled)
             {
                 if(!first) result += " and ";
                 result += item.description;
@@ -32,10 +37,10 @@ public class Location : MonoBehaviour
     public string GetConnectionsText()
     {
         string result = "";
-        foreach (Connection c in connections)
+        foreach (Connection c in Connections)
         {
-            if (c.connectionEnabled)
-                result += c.description + "\n";
+            if (c.ConnectionEnabled)
+                result += c.Description + "\n";
         }
 
         return result;
@@ -43,9 +48,9 @@ public class Location : MonoBehaviour
 
     public Connection GetConnection(string connectionNoun)
     {
-        foreach (Connection c in connections)
+        foreach (Connection c in Connections)
         {
-            if (c.connectionName.ToLower() == connectionNoun.ToLower())
+            if (c.ConnectionName.ToLower() == connectionNoun.ToLower())
                 return c;
         }
         return null;
@@ -53,9 +58,9 @@ public class Location : MonoBehaviour
 
     internal bool HasItem(Item itemToCheck)
     {
-        foreach (Item item in items)
+        foreach (Item item in Items)
         {
-            if (item == itemToCheck && item.itemEnabled)
+            if (item == itemToCheck && item.ItemEnabled)
                 return true;
         }
         return false;

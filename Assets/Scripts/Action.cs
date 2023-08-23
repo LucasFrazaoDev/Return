@@ -4,6 +4,9 @@ using UnityEngine;
 
 public abstract class Action : ScriptableObject
 {
-    public string keyword;
+    [SerializeField] private string m_keyword;
+
+    public string Keyword { get => m_keyword; set => m_keyword = value; }
+
     public abstract void RespondToInput(GameController controller, string noun);
 }

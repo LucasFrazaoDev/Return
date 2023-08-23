@@ -7,16 +7,16 @@ public class Inventory : Action
 {
     public override void RespondToInput(GameController controller, string noun)
     {
-        if(controller.player.inventory.Count == 0)
+        if(controller.Player.Inventory.Count == 0)
         {
-            controller.currentText.text = "You have nothing!";
+            controller.CurrentText.text = "You have nothing!";
             return;
         }
 
         string result = "You have";
 
         bool first = true;
-        foreach (Item item in controller.player.inventory)
+        foreach (Item item in controller.Player.Inventory)
         {
             if(first)
                 result += " a " + item.itemName;
@@ -25,6 +25,6 @@ public class Inventory : Action
 
             first = false;
         }
-        controller.currentText.text = result;
+        controller.CurrentText.text = result;
     }
 }

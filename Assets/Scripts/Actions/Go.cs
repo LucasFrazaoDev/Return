@@ -8,9 +8,9 @@ public class Go : Action
 {
     public override void RespondToInput(GameController controller, string noun)
     {
-        if(controller.player.ChangeLocation(controller, noun))
+        if(controller.Player.ChangeLocation(controller, noun))
             controller.DisplayLocation();
         else
-            controller.currentText.text = "You can't go that way!";
+            controller.CurrentText.text = "You can't go that way!";
     }
 }
