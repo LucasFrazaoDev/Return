@@ -335,7 +335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: staff
   description: A staff that you can use to defend yourself
-  m_playerCanTake: 0
+  m_playerCanTake: 1
   m_playerCanGiveTo: 0
   m_playerCanTalkTo: 0
   m_playerCanRead: 0
@@ -517,11 +517,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: goldencoins
   description: <b>goldencoins</b>
-  m_playerCanTake: 0
+  m_playerCanTake: 1
   m_playerCanGiveTo: 0
   m_playerCanTalkTo: 0
   m_playerCanRead: 0
-  m_itemEnabled: 1
+  m_itemEnabled: 0
   m_targetItem: {fileID: 0}
   m_interactions:
   - m_action: {fileID: 11400000, guid: 9e5b3e36f46f31d4198f24848a9c0f27, type: 2}
@@ -684,7 +684,8 @@ MonoBehaviour:
   m_locationName: East antechamber
   m_connections:
   - {fileID: 1470411362}
-  m_items: []
+  m_items:
+  - {fileID: 921991519}
   description: 'A dark antechamber, the remnants of the smashed statue scattered
     across the dusty stone floor. '
 --- !u!1 &399174768
@@ -1386,7 +1387,7 @@ MonoBehaviour:
   m_playerCanGiveTo: 0
   m_playerCanTalkTo: 0
   m_playerCanRead: 0
-  m_itemEnabled: 1
+  m_itemEnabled: 0
   m_targetItem: {fileID: 0}
   m_interactions: []
 --- !u!1 &959289275
@@ -1598,11 +1599,21 @@ MonoBehaviour:
   m_itemEnabled: 0
   m_targetItem: {fileID: 0}
   m_interactions:
-  - m_action: {fileID: 0}
-    response: 
+  - m_action: {fileID: 11400000, guid: 170d006478a0edf498de85bfe529d701, type: 2}
+    response: Where do you seek?
     m_textToMatch: 
     m_itemsToDisable: []
     m_itemsToEnable: []
+    m_connectionsToDisable: []
+    m_connectionsToEnable: []
+    teleportLocation: {fileID: 0}
+  - m_action: {fileID: 11400000, guid: b0e6e7cd5f127b142be24b80c2fdc6c0, type: 2}
+    response: Give me payment!
+    m_textToMatch: Albion
+    m_itemsToDisable:
+    - {fileID: 1019458802}
+    m_itemsToEnable:
+    - {fileID: 1560103672}
     m_connectionsToDisable: []
     m_connectionsToEnable: []
     teleportLocation: {fileID: 0}
@@ -1702,7 +1713,8 @@ MonoBehaviour:
   m_locationName: West antechamber
   m_connections:
   - {fileID: 918452240}
-  m_items: []
+  m_items:
+  - {fileID: 1375390120}
   description: A dark antechamber, smashed and upturned pews, the wall is covered
     with faded artworks and tapestries.
 --- !u!1 &1085638413
@@ -2058,7 +2070,11 @@ MonoBehaviour:
   - {fileID: 1146660054}
   - {fileID: 1167316549}
   - {fileID: 1381474239}
-  m_items: []
+  m_items:
+  - {fileID: 1932759690}
+  - {fileID: 1946403417}
+  - {fileID: 189137072}
+  - {fileID: 934177437}
   description: 'you see a dark ruined chapel. In the centre of a dark stone room
     a smashed statue, the plinth and lower half of a robed figure. '
 --- !u!1 &1224451540
@@ -2481,7 +2497,7 @@ MonoBehaviour:
   m_interactions:
   - m_action: {fileID: 11400000, guid: 170d006478a0edf498de85bfe529d701, type: 2}
     response: Who is it that seeks passage?
-    m_textToMatch: Merlin
+    m_textToMatch: 
     m_itemsToDisable: []
     m_itemsToEnable: []
     m_connectionsToDisable: []
@@ -2489,7 +2505,7 @@ MonoBehaviour:
     teleportLocation: {fileID: 0}
   - m_action: {fileID: 11400000, guid: b0e6e7cd5f127b142be24b80c2fdc6c0, type: 2}
     response: Where do you seek?
-    m_textToMatch: Albion
+    m_textToMatch: merlin
     m_itemsToDisable:
     - {fileID: 1341913208}
     m_itemsToEnable:
@@ -3226,12 +3242,28 @@ MonoBehaviour:
   itemName: ferryman
   description: A robed Ferryman
   m_playerCanTake: 0
-  m_playerCanGiveTo: 0
-  m_playerCanTalkTo: 0
+  m_playerCanGiveTo: 1
+  m_playerCanTalkTo: 1
   m_playerCanRead: 0
   m_itemEnabled: 0
   m_targetItem: {fileID: 0}
-  m_interactions: []
+  m_interactions:
+  - m_action: {fileID: 11400000, guid: 170d006478a0edf498de85bfe529d701, type: 2}
+    response: Give me payment!
+    m_textToMatch: 
+    m_itemsToDisable: []
+    m_itemsToEnable: []
+    m_connectionsToDisable: []
+    m_connectionsToEnable: []
+    teleportLocation: {fileID: 0}
+  - m_action: {fileID: 11400000, guid: 361dbafeecc0fc1499d75f5e5b874fcf, type: 2}
+    response: 
+    m_textToMatch: goldencoins
+    m_itemsToDisable: []
+    m_itemsToEnable: []
+    m_connectionsToDisable: []
+    m_connectionsToEnable: []
+    teleportLocation: {fileID: 1844007479}
 --- !u!1 &1622504585
 GameObject:
   m_ObjectHideFlags: 0
@@ -3361,7 +3393,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_currentLocation: {fileID: 967324390}
-  m_inventory: []
+  m_inventory:
+  - {fileID: 111405901}
 --- !u!4 &1650749726
 Transform:
   m_ObjectHideFlags: 0
@@ -3646,7 +3679,10 @@ MonoBehaviour:
   m_locationName: Dock
   m_connections:
   - {fileID: 862301594}
-  m_items: []
+  m_items:
+  - {fileID: 1341913208}
+  - {fileID: 1019458802}
+  - {fileID: 1560103672}
   description: "You find yourself walking down a stone jetty, as you move forward,
     slowly a hooded figure \r\nmaterialises from the mist. A Ferryman stands in his
     boat, it rocks in the gathering wind ringing the\r\narrival bell. "
