@@ -12,10 +12,14 @@ public class GameController : MonoBehaviour
     [SerializeField] private TMP_InputField m_textEntryField;
     [SerializeField] private TextMeshProUGUI m_logText;
     [SerializeField] private TextMeshProUGUI m_currentText;
+    [SerializeField] private Image m_transitionImage;
 
     [Header("Gameplay elements")]
     [SerializeField] private Player m_player;
     [SerializeField] private Action[] m_actions;
+
+    private float m_fillAmountProgress = 1.0f;
+    private float m_transitionDuration = 2.0f;
 
     [TextArea]public string introText;
 
@@ -27,6 +31,8 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        StartCoroutine(TransitionEffect(true));
+
         LogText.text = introText;
         DisplayLocation();
         m_textEntryField.ActivateInputField();
@@ -68,21 +74,53 @@ public class GameController : MonoBehaviour
         string[] separatedWords = input.Split(delimiter);
 
         if (input == "quit")
-            SceneManager.LoadScene(0);
-
-        foreach (Action action in Actions)
         {
-            if(action.Keyword.ToLower() == separatedWords[0])
+            StartCoroutine(TransitionEffect(false));
+        }
+        else
+        {
+            foreach (Action action in Actions)
             {
-                if(separatedWords.Length > 1)
-                    action.RespondToInput(this, separatedWords[1]);
-                else
-                    action.RespondToInput(this, "");
+                if (action.Keyword.ToLower() == separatedWords[0])
+                {
+                    if (separatedWords.Length > 1)
+                        action.RespondToInput(this, separatedWords[1]);
+                    else
+                        action.RespondToInput(this, "");
 
-                return;
+                    return;
+                }
             }
+
+            CurrentText.text = "Nothing happens! (Having trouble? Type Help)";
+        }
+    }
+
+    private IEnumerator TransitionEffect(bool isStarting)
+    {
+        m_transitionImage.gameObject.SetActive(true);
+
+        float startFillAmount = isStarting ? 1.0f : 0f;
+        float endFillAmount = isStarting ? 0f : 1.0f;
+
+        float elapsedTime = 0f;
+
+        while (elapsedTime < m_transitionDuration)
+        {
+            m_fillAmountProgress = Mathf.Lerp(startFillAmount, endFillAmount, elapsedTime / m_transitionDuration);
+            
+            m_transitionImage.fillAmount = m_fillAmountProgress;
+            elapsedTime += Time.deltaTime;
+            yield return null;
         }
 
-        CurrentText.text = "Nothing happens! (having trouble? Type Help)";
+        // Ensuring that the fill amount remains at an appropriate value
+        m_transitionImage.fillAmount = isStarting ? 0f : 1.0f;
+
+        if(isStarting)
+            m_transitionImage.gameObject.SetActive(false);
+
+        if(!isStarting)
+            SceneManager.LoadScene(0);
     }
 }
