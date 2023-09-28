@@ -6,20 +6,16 @@ using TMPro;
 using UnityEditor.SearchService;
 using UnityEngine.SceneManagement;
 
-public class GameController : MonoBehaviour
+public class GameController : TransitionImageBase
 {
     [Header("UI Elements")]
     [SerializeField] private TMP_InputField m_textEntryField;
     [SerializeField] private TextMeshProUGUI m_logText;
     [SerializeField] private TextMeshProUGUI m_currentText;
-    [SerializeField] private Image m_transitionImage;
 
     [Header("Gameplay elements")]
     [SerializeField] private Player m_player;
     [SerializeField] private Action[] m_actions;
-
-    private float m_fillAmountProgress = 1.0f;
-    private float m_transitionDuration = 2.0f;
 
     [TextArea]public string introText;
 
@@ -75,7 +71,7 @@ public class GameController : MonoBehaviour
 
         if (input == "quit")
         {
-            StartCoroutine(TransitionEffect(false));
+            StartCoroutine(TransitionEffect(false, 0));
         }
         else
         {
@@ -94,33 +90,5 @@ public class GameController : MonoBehaviour
 
             CurrentText.text = "Nothing happens! (Having trouble? Type Help)";
         }
-    }
-
-    private IEnumerator TransitionEffect(bool isStarting)
-    {
-        m_transitionImage.gameObject.SetActive(true);
-
-        float startFillAmount = isStarting ? 1.0f : 0f;
-        float endFillAmount = isStarting ? 0f : 1.0f;
-
-        float elapsedTime = 0f;
-
-        while (elapsedTime < m_transitionDuration)
-        {
-            m_fillAmountProgress = Mathf.Lerp(startFillAmount, endFillAmount, elapsedTime / m_transitionDuration);
-            
-            m_transitionImage.fillAmount = m_fillAmountProgress;
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-
-        // Ensuring that the fill amount remains at an appropriate value
-        m_transitionImage.fillAmount = isStarting ? 0f : 1.0f;
-
-        if(isStarting)
-            m_transitionImage.gameObject.SetActive(false);
-
-        if(!isStarting)
-            SceneManager.LoadScene(0);
     }
 }

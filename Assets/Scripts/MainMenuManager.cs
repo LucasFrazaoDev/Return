@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MainMenuManager : MonoBehaviour
+public class MainMenuManager : TransitionImageBase
 {
     [SerializeField] private Button m_startGameButton;
     [SerializeField] private Button m_QuitGameButton;
@@ -15,8 +15,13 @@ public class MainMenuManager : MonoBehaviour
         m_QuitGameButton.onClick.AddListener(() => Application.Quit());
     }
 
+    private void Start()
+    {
+        StartCoroutine(TransitionEffect(true));
+    }
+
     private void StartGame()
     {
-        SceneManager.LoadScene(1);
+        StartCoroutine(TransitionEffect(false, 1));
     }
 }
