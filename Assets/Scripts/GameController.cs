@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEditor.SearchService;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -64,6 +66,9 @@ public class GameController : MonoBehaviour
 
         char[] delimiter = { ' ' };
         string[] separatedWords = input.Split(delimiter);
+
+        if (input == "quit")
+            SceneManager.LoadScene(0);
 
         foreach (Action action in Actions)
         {
