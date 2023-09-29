@@ -16,6 +16,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip[] m_musics;
     [SerializeField] private AudioClip[] m_sfx;
 
+    public AudioSource MusicAudioSource { get => m_musicAudioSource; private set => m_musicAudioSource = value; }
+    public AudioSource SfxAudioSource { get => m_sfxAudioSource; private set => m_sfxAudioSource = value; }
 
     private void Awake()
     {
@@ -24,6 +26,11 @@ public class AudioManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(this);
         }
+    }
+
+    public void UpdateMusicVolume(float volume)
+    {
+        m_musicAudioSource.volume = volume;
     }
 
     private void PlayMusic()
