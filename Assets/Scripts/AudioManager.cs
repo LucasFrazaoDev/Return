@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -33,9 +34,32 @@ public class AudioManager : MonoBehaviour
         m_musicAudioSource.volume = volume;
     }
 
-    private void PlayMusic()
+    public void TransitionToNextMusic()
     {
+        float startVolume = Instance.MusicAudioSource.volume;
 
+        while (Instance.MusicAudioSource.volume > 0f)
+        {
+            float progress = 1f - (Instance.MusicAudioSource.volume / startVolume);
+            Instance.MusicAudioSource.volume = Mathf.Lerp(startVolume, 0f, progress);
+        }
+
+        Instance.MusicAudioSource.volume = 0f;
+
+        ChangeMusicClip(1);
+
+        while (Instance.MusicAudioSource.volume < startVolume)
+        {
+            float progress = Instance.MusicAudioSource.volume / startVolume;
+            Instance.MusicAudioSource.volume = Mathf.Lerp(0f, startVolume, progress);
+        }
+
+        Instance.MusicAudioSource.volume = startVolume;
+    }
+
+    private void ChangeMusicClip(int clipIndex)
+    {
+        m_musicAudioSource.clip = m_musics[clipIndex];
     }
 
     private void PlaySFX()

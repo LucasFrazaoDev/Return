@@ -1057,7 +1057,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_hoverScale: 2.2
-  m_duration: 0.2
+  m_duration: 0.3
   m_originalScale: 0
 --- !u!1 &567221966
 GameObject:
@@ -1194,7 +1194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_hoverScale: 1.6
-  m_duration: 0.2
+  m_duration: 0.3
   m_originalScale: 0
 --- !u!1 &698284407
 GameObject:
@@ -2234,7 +2234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_hoverScale: 1.6
-  m_duration: 0.2
+  m_duration: 0.3
   m_originalScale: 0
 --- !u!1 &1301702305
 GameObject:
@@ -2613,7 +2613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_hoverScale: 1.6
-  m_duration: 0.2
+  m_duration: 0.3
   m_originalScale: 0
 --- !u!1 &1459523104
 GameObject:
