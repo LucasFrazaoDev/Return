@@ -935,6 +935,7 @@ GameObject:
   - component: {fileID: 561940055}
   - component: {fileID: 561940054}
   - component: {fileID: 561940053}
+  - component: {fileID: 561940056}
   m_Layer: 5
   m_Name: OptionsButton
   m_TagString: Untagged
@@ -951,8 +952,8 @@ RectTransform:
   m_GameObject: {fileID: 561940051}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.043, y: 2.043, z: 2.043}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1340710612}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1043,6 +1044,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 561940051}
   m_CullTransparentMesh: 1
+--- !u!114 &561940056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 561940051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39a84ced44d5c4b42bd5b2e0943ef68c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_hoverScale: 2.2
+  m_duration: 0.2
+  m_originalScale: 0
 --- !u!1 &567221966
 GameObject:
   m_ObjectHideFlags: 0
@@ -1055,6 +1071,7 @@ GameObject:
   - component: {fileID: 567221970}
   - component: {fileID: 567221969}
   - component: {fileID: 567221968}
+  - component: {fileID: 567221971}
   m_Layer: 5
   m_Name: QuitGameButton
   m_TagString: Untagged
@@ -1071,8 +1088,8 @@ RectTransform:
   m_GameObject: {fileID: 567221966}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.4066, y: 1.4066, z: 1.4066}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 698284408}
   m_Father: {fileID: 1340710612}
@@ -1164,6 +1181,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 567221966}
   m_CullTransparentMesh: 1
+--- !u!114 &567221971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567221966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39a84ced44d5c4b42bd5b2e0943ef68c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_hoverScale: 1.6
+  m_duration: 0.2
+  m_originalScale: 0
 --- !u!1 &698284407
 GameObject:
   m_ObjectHideFlags: 0
@@ -2079,6 +2111,7 @@ GameObject:
   - component: {fileID: 1292532512}
   - component: {fileID: 1292532511}
   - component: {fileID: 1292532510}
+  - component: {fileID: 1292532513}
   m_Layer: 5
   m_Name: InstructionsButton
   m_TagString: Untagged
@@ -2095,8 +2128,8 @@ RectTransform:
   m_GameObject: {fileID: 1292532508}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.4066, y: 1.4066, z: 1.4066}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1301702306}
   m_Father: {fileID: 1340710612}
@@ -2188,6 +2221,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1292532508}
   m_CullTransparentMesh: 1
+--- !u!114 &1292532513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292532508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39a84ced44d5c4b42bd5b2e0943ef68c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_hoverScale: 1.6
+  m_duration: 0.2
+  m_originalScale: 0
 --- !u!1 &1301702305
 GameObject:
   m_ObjectHideFlags: 0
@@ -2442,6 +2490,7 @@ GameObject:
   - component: {fileID: 1422657038}
   - component: {fileID: 1422657037}
   - component: {fileID: 1422657036}
+  - component: {fileID: 1422657039}
   m_Layer: 5
   m_Name: StartGameButton
   m_TagString: Untagged
@@ -2458,8 +2507,8 @@ RectTransform:
   m_GameObject: {fileID: 1422657034}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.4066, y: 1.4066, z: 1.4066}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 851485637}
   m_Father: {fileID: 1340710612}
@@ -2551,6 +2600,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1422657034}
   m_CullTransparentMesh: 1
+--- !u!114 &1422657039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422657034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39a84ced44d5c4b42bd5b2e0943ef68c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_hoverScale: 1.6
+  m_duration: 0.2
+  m_originalScale: 0
 --- !u!1 &1459523104
 GameObject:
   m_ObjectHideFlags: 0
@@ -2697,6 +2761,7 @@ GameObject:
   - component: {fileID: 1498387701}
   - component: {fileID: 1498387700}
   - component: {fileID: 1498387699}
+  - component: {fileID: 1498387702}
   m_Layer: 5
   m_Name: CloseOptionsPanelButton
   m_TagString: Untagged
@@ -2713,8 +2778,8 @@ RectTransform:
   m_GameObject: {fileID: 1498387697}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.495, y: 1.495, z: 1.495}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.5000001, y: 1.5000001, z: 1.5000001}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1881808267}
   m_Father: {fileID: 1605660774}
@@ -2806,6 +2871,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1498387697}
   m_CullTransparentMesh: 1
+--- !u!114 &1498387702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498387697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39a84ced44d5c4b42bd5b2e0943ef68c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_hoverScale: 1.7
+  m_duration: 0.2
+  m_originalScale: 0
 --- !u!1 &1605660773
 GameObject:
   m_ObjectHideFlags: 0
