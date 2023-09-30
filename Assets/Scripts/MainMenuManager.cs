@@ -17,8 +17,6 @@ public class MainMenuManager : TransitionImageBase
     [SerializeField] private Slider m_sfxVolumeSlider;
     [SerializeField] private Button m_closePanelGameButton;
 
-    private float m_delayChangeMusic = 1.0f;
-
     private void Awake()
     {
         m_startGameButton.onClick.AddListener(StartGame);
@@ -39,15 +37,12 @@ public class MainMenuManager : TransitionImageBase
     private void StartGame()
     {
         StartCoroutine(TransitionEffect(false, 1));
-        StartCoroutine(ChangeMusic());
     }
 
-    private IEnumerator ChangeMusic()
-    {
-        //yield return new WaitForSeconds(m_delayChangeMusic);
-        AudioManager.Instance.TransitionToNextMusic();
-        yield return null;
-    }
+    //private void ChangeMusic()
+    //{
+    //    AudioManager.Instance.TransitionToNextMusic();
+    //}
 
     private void ChangeVolume(float volume)
     {

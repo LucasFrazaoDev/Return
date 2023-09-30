@@ -36,6 +36,9 @@ public abstract class TransitionImageBase : MonoBehaviour
             m_transitionImage.gameObject.SetActive(false);
 
         if (!isStarting)
+        {
+            StartCoroutine(AudioManager.Instance.TransitionToNextMusic());
             SceneManager.LoadScene(sceneIndex);
+        }
     }
 }
