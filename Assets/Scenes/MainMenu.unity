@@ -603,7 +603,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_musicAudioSource: {fileID: 375139644}
   m_sfxAudioSource: {fileID: 375139643}
-  m_musics: []
+  m_musics:
+  - {fileID: 8300000, guid: e3d931048a04b334badaf2ab005c90a3, type: 3}
+  - {fileID: 8300000, guid: a78832341e44eb3459feb6bbfd2529d9, type: 3}
   m_sfx: []
 --- !u!4 &375139642
 Transform:

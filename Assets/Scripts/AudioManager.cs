@@ -17,7 +17,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip[] m_musics;
     [SerializeField] private AudioClip[] m_sfx;
 
-    private float transitionDuration = 3.0f;
+    private float transitionDuration = 2.0f;
 
     public AudioSource MusicAudioSource { get => m_musicAudioSource; private set => m_musicAudioSource = value; }
     public AudioSource SfxAudioSource { get => m_sfxAudioSource; private set => m_sfxAudioSource = value; }
@@ -25,13 +25,9 @@ public class AudioManager : MonoBehaviour
     private void Awake()
     {
         if (Instance != null && Instance != this)
-        {
             Destroy(gameObject);
-        }
         else
-        {
             Instance = this;
-        }
 
         DontDestroyOnLoad(gameObject);
     }
@@ -41,7 +37,12 @@ public class AudioManager : MonoBehaviour
         m_musicAudioSource.volume = volume;
     }
 
-    public IEnumerator TransitionToNextMusic()
+    public void MakeTransition()
+    {
+        StartCoroutine(TransitionToNextMusic());
+    }
+
+    private IEnumerator TransitionToNextMusic()
     {
         Debug.LogWarning("Metodo foi chamado!");
         float startVolume = Instance.MusicAudioSource.volume;
@@ -49,7 +50,8 @@ public class AudioManager : MonoBehaviour
         while (Instance.MusicAudioSource.volume > 0f)
         {
             float progress = 1f - (Instance.MusicAudioSource.volume / startVolume);
-            Instance.MusicAudioSource.volume = Mathf.Lerp(startVolume, 0f, progress);
+            Instance.MusicAudioSource.volume = Mathf.Lerp(startVolume, 0f, progress + Time.deltaTime / transitionDuration);
+            Debug.Log("Baixando som!");
             yield return null; // Aguarde até a próxima atualização do frame
         }
         Debug.Log("Passou do primeiro loop!");
@@ -61,6 +63,7 @@ public class AudioManager : MonoBehaviour
         {
             float progress = Instance.MusicAudioSource.volume / startVolume;
             Instance.MusicAudioSource.volume = Mathf.Lerp(0f, startVolume, progress + Time.deltaTime / transitionDuration);
+            Debug.Log("Aumentando som!");
             yield return null; // Aguarde até a próxima atualização do frame
         }
         Debug.Log("Passou do segundo loop!");

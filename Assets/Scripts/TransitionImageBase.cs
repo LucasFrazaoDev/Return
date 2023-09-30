@@ -37,7 +37,6 @@ public abstract class TransitionImageBase : MonoBehaviour
 
         if (!isStarting)
         {
-            StartCoroutine(AudioManager.Instance.TransitionToNextMusic());
             SceneManager.LoadScene(sceneIndex);
         }
     }
