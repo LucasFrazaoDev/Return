@@ -72,6 +72,7 @@ public class GameController : TransitionImageBase
         if (input == "quit")
         {
             StartCoroutine(TransitionEffect(false, 0));
+            AudioManager.Instance.MakeTransition(0);
         }
         else
         {

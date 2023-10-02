@@ -37,36 +37,31 @@ public class AudioManager : MonoBehaviour
         m_musicAudioSource.volume = volume;
     }
 
-    public void MakeTransition()
+    public void MakeTransition(int clipIndex)
     {
-        StartCoroutine(TransitionToNextMusic());
+        StartCoroutine(TransitionToNextMusic(clipIndex));
     }
 
-    private IEnumerator TransitionToNextMusic()
+    private IEnumerator TransitionToNextMusic(int clipIndex)
     {
-        Debug.LogWarning("Metodo foi chamado!");
         float startVolume = Instance.MusicAudioSource.volume;
 
         while (Instance.MusicAudioSource.volume > 0f)
         {
             float progress = 1f - (Instance.MusicAudioSource.volume / startVolume);
             Instance.MusicAudioSource.volume = Mathf.Lerp(startVolume, 0f, progress + Time.deltaTime / transitionDuration);
-            Debug.Log("Baixando som!");
-            yield return null; // Aguarde até a próxima atualização do frame
+            yield return null;
         }
-        Debug.Log("Passou do primeiro loop!");
         Instance.MusicAudioSource.volume = 0f;
 
-        ChangeMusicClip(1);
+        ChangeMusicClip(clipIndex);
 
         while (Instance.MusicAudioSource.volume < startVolume)
         {
             float progress = Instance.MusicAudioSource.volume / startVolume;
             Instance.MusicAudioSource.volume = Mathf.Lerp(0f, startVolume, progress + Time.deltaTime / transitionDuration);
-            Debug.Log("Aumentando som!");
-            yield return null; // Aguarde até a próxima atualização do frame
+            yield return null;
         }
-        Debug.Log("Passou do segundo loop!");
         Instance.MusicAudioSource.volume = startVolume;
     }
 
@@ -76,7 +71,6 @@ public class AudioManager : MonoBehaviour
         m_musicAudioSource.Stop();
         m_musicAudioSource.clip = m_musics[clipIndex];
         m_musicAudioSource.Play();
-        Debug.Log("Trocou de song!!!");
     }
 
     private void PlaySFX()

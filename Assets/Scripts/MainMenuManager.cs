@@ -37,7 +37,7 @@ public class MainMenuManager : TransitionImageBase
     private void StartGame()
     {
         StartCoroutine(TransitionEffect(false, 1));
-        AudioManager.Instance.MakeTransition();
+        AudioManager.Instance.MakeTransition(1);
     }
 
     private void ChangeVolume(float volume)
