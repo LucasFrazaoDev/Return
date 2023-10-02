@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -16,6 +17,7 @@ public class MainMenuManager : TransitionImageBase
     [SerializeField] private Slider m_musicVolumeSlider;
     [SerializeField] private Slider m_sfxVolumeSlider;
     [SerializeField] private Button m_closePanelGameButton;
+    [SerializeField] private TextMeshProUGUI m_versionText;
 
     private void Awake()
     {
@@ -31,6 +33,7 @@ public class MainMenuManager : TransitionImageBase
         m_gameOptionsPanel.SetActive(false);
         m_musicVolumeSlider.onValueChanged.AddListener(ChangeVolume);
 
+        m_versionText.text = $"V_{Application.version}";
         m_musicVolumeSlider.value = AudioManager.Instance.MusicAudioSource.volume;
     }
 
